@@ -1,4 +1,5 @@
-int preLF=0;
+#include <stdio.h>
+
 int dep_flag[N]={0};
 
 void printTree(int lv, int node)
@@ -6,6 +7,7 @@ void printTree(int lv, int node)
     int i, j;
     int indent = 0;
     int buff   = -1;
+    int preLF  = 0;
 
     for (i = 0; i < N; i++)
         if (parent[i] == node || i == N-1) {
@@ -14,7 +16,7 @@ void printTree(int lv, int node)
                 else          dep_flag[lv] = 1;
                 if (indent) {
                     for (j = 0; j < lv; j++)
-                        if (dep_flag[j]) printf("|   ");
+                        if (dep_flag[j]) printf(" |  ");
                         else             printf("    ");
                     printf(" |-%c", V[buff]);
                 } else {
