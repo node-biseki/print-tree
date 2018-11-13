@@ -4,6 +4,8 @@ void printTreeWithoutHyphen(int lv, int node)
     int indent = 0;
     int preLF  = 0;
 
+    if (lv == 1) printf(" %c", V[node]);
+
     for (i = 0; i < N; i++) {
         if (parent[i] == node) {
             if (indent) {
@@ -13,7 +15,7 @@ void printTreeWithoutHyphen(int lv, int node)
             }
             printf(" %c", V[i]);
             printTreeWithoutHyphen(lv+1, i);
-            preLF=1;
+            preLF = 1;
         }
     }
     if (!preLF) printf("\n");
