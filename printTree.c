@@ -9,6 +9,8 @@ void printTree(int lv, int node)
     int buff   = -1;
     int preLF  = 0;
 
+    if (lv == 1) printf("   %c", node);
+    
     for (i = 0; i <= N; i++)
         if (i == N || parent[i] == node) {
             if (buff != -1)  {
